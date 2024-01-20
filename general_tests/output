@@ -1,0 +1,411 @@
+[before malloc] program break:  0x4030000
+[before malloc] free list: 
+Allocating block 0x4030000 with length 0x28 bytes
+[after malloc] program break:  0x4030028
+[after malloc] free list: 
+[before malloc] program break:  0x4030028
+[before malloc] free list: 
+Allocating block 0x4030028 with length 0x58 bytes
+[after malloc] program break:  0x4030080
+[after malloc] free list: 
+[before malloc] program break:  0x4030080
+[before malloc] free list: 
+Allocating block 0x4030080 with length 0x38 bytes
+[after malloc] program break:  0x40300b8
+[after malloc] free list: 
+[before malloc] program break:  0x40300b8
+[before malloc] free list: 
+Allocating block 0x40300b8 with length 0x98 bytes
+[after malloc] program break:  0x4030150
+[after malloc] free list: 
+test block:  0x40300b8 (length: 0x98)
+[before free] program break:  0x4030150
+[before free] free list: 
+test block:  0x40300b8 (length: 0x98)
+Freeing block 0x4030000 with length 0x28 bytes
+[after free] program break:  0x4030150
+[after free] free list: 
+(0) < 0x4030000> (length: 0x28)
+test block:  0x40300b8 (length: 0x98)
+[before free] program break:  0x4030150
+[before free] free list: 
+(0) < 0x4030000> (length: 0x28)
+test block:  0x40300b8 (length: 0x98)
+Freeing block 0x4030080 with length 0x38 bytes
+[free: before insertion at end] program break:  0x4030150
+[free: before insertion at end] free list: 
+(0) < 0x4030000> (length: 0x28)
+test block:  0x40300b8 (length: 0x98)
+[free: after insertion at end] program break:  0x4030150
+[free: after insertion at end] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+test block:  0x40300b8 (length: 0x98)
+[before merge] program break:  0x4030150
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+test block:  0x40300b8 (length: 0x98)
+[after merge] program break:  0x4030150
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+test block:  0x40300b8 (length: 0x98)
+[after free] program break:  0x4030150
+[after free] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+test block:  0x40300b8 (length: 0x98)
+[before malloc] program break:  0x4030150
+[before malloc] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+test block:  0x40300b8 (length: 0x98)
+splitting block 0x4030080 with new length 0x34
+[before split] program break:  0x4030150
+[before split] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+test block:  0x40300b8 (length: 0x98)
+Cannot split block
+Allocating block 0x4030080 with length 0x38 bytes
+[after malloc] program break:  0x4030150
+[after malloc] free list: 
+(0) < 0x4030000> (length: 0x28)
+test block:  0x40300b8 (length: 0x98)
+[before malloc] program break:  0x4030150
+[before malloc] free list: 
+(0) < 0x4030000> (length: 0x28)
+test block:  0x40300b8 (length: 0x98)
+Allocating block 0x4030150 with length 0x418 bytes
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x4030000> (length: 0x28)
+test block:  0x40300b8 (length: 0x98)
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0x28)
+test block:  0x40300b8 (length: 0x98)
+Freeing block 0x4030150 with length 0x418 bytes
+[free: before insertion at end] program break:  0x4030568
+[free: before insertion at end] free list: 
+(0) < 0x4030000> (length: 0x28)
+test block:  0x40300b8 (length: 0x98)
+[free: after insertion at end] program break:  0x4030568
+[free: after insertion at end] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[after free] program break:  0x4030568
+[after free] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+Freeing block 0x4030028 with length 0x58 bytes
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030028> (length: 0x58)
+(2) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030028> (length: 0x58)
+(2) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+Merged with previous block
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+Freeing block 0x40300b8 with length 0x98 bytes
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x98)
+(2) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x98)
+(2) < 0x4030150> (length: 0x418)
+test block:  0x40300b8 (length: 0x98)
+Merged with next block
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x4b0)
+test block:  0x40300b8 (length: 0x4b0)
+[before malloc] program break:  0x4030568
+[before malloc] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x4b0)
+test block:  0x40300b8 (length: 0x4b0)
+splitting block 0x4030000 with new length 0x74
+[before split] program break:  0x4030568
+[before split] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x4b0)
+test block:  0x40300b8 (length: 0x4b0)
+Cannot split block
+Allocating block 0x4030000 with length 0x80 bytes
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x40300b8> (length: 0x4b0)
+test block:  0x40300b8 (length: 0x4b0)
+[before malloc] program break:  0x4030568
+[before malloc] free list: 
+(0) < 0x40300b8> (length: 0x4b0)
+test block:  0x40300b8 (length: 0x4b0)
+splitting block 0x40300b8 with new length 0x28
+[before split] program break:  0x4030568
+[before split] free list: 
+(0) < 0x40300b8> (length: 0x4b0)
+test block:  0x40300b8 (length: 0x4b0)
+[during split: before updating pointers] program break:  0x4030568
+[during split: before updating pointers] free list: 
+(0) < 0x40300b8> (length: 0x4b0)
+test block:  0x40300b8 (length: 0x4b0)
+Splitting block 0x40300b8 into blocks 0x40300b8 (length 0x28) and 0x40300e0 (length 0x488)
+[after split] program break:  0x4030568
+[after split] free list: 
+(0) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+Allocating block 0x40300b8 with length 0x28 bytes
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+Freeing block 0x4030080 with length 0x38 bytes
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+head changed
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+[before malloc] program break:  0x4030568
+[before malloc] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+splitting block 0x40300e0 with new length 0x40
+[before split] program break:  0x4030568
+[before split] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+[during split: before updating pointers] program break:  0x4030568
+[during split: before updating pointers] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+test block:  0x40300b8 (length: 0x28)
+Splitting block 0x40300e0 into blocks 0x40300e0 (length 0x40) and 0x4030120 (length 0x448)
+[after split] program break:  0x4030568
+[after split] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+test block:  0x40300b8 (length: 0x28)
+Allocating block 0x40300e0 with length 0x40 bytes
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+test block:  0x40300b8 (length: 0x28)
+[before malloc] program break:  0x4030568
+[before malloc] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+test block:  0x40300b8 (length: 0x28)
+splitting block 0x4030120 with new length 0x98
+[before split] program break:  0x4030568
+[before split] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+test block:  0x40300b8 (length: 0x28)
+[during split: before updating pointers] program break:  0x4030568
+[during split: before updating pointers] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+test block:  0x40300b8 (length: 0x28)
+Splitting block 0x4030120 into blocks 0x4030120 (length 0x98) and 0x40301b8 (length 0x3b0)
+[after split] program break:  0x4030568
+[after split] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Allocating block 0x4030120 with length 0x98 bytes
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Freeing block 0x4030000 with length 0x80 bytes
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+head changed
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030080> (length: 0x38)
+(2) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030080> (length: 0x38)
+(2) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Merged with next block
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Freeing block 0x40300b8 with length 0x28 bytes
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40300b8> (length: 0x28)
+(2) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40300b8> (length: 0x28)
+(2) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Merged with previous block
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Freeing block 0x40300e0 with length 0x40 bytes
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40300e0> (length: 0x40)
+(2) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40300e0> (length: 0x40)
+(2) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Merged with previous block
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Freeing block 0x4030120 with length 0x98 bytes
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x4030120> (length: 0x98)
+(2) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x4030120> (length: 0x98)
+(2) < 0x40301b8> (length: 0x3b0)
+test block:  0x40300b8 (length: 0x28)
+Merged with next block
+Merged with previous block
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x568)
+test block:  0x40300b8 (length: 0x28)
+Calculated expected value of 68614
+Test passed

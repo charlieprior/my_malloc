@@ -4,16 +4,16 @@
 #include <stdlib.h>
 
 typedef struct block {
-    size_t length;
-    struct block *prev;
-    struct block *next;
+  size_t length; // The length of the block, including the header
+  struct block *prev;
+  struct block *next;
 } block_t;
 
-//First Fit malloc/free
+// First Fit malloc/free
 void *ff_malloc(size_t size);
 void ff_free(void *ptr);
 
-//Best Fit malloc/free
+// Best Fit malloc/free
 void *bf_malloc(size_t size);
 void bf_free(void *ptr);
 
