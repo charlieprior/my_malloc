@@ -4,7 +4,7 @@
 
 #include "my_malloc.h"
 
-#define DEBUG
+// #define DEBUG
 
 // LENGTH refers to the length of the block, including the header
 // SIZE refers to the size of the block, not including the header
@@ -17,18 +17,7 @@ static void *start = NULL;
 
 void print_debug(char *prefix) {
 #ifdef DEBUG
-  printf("[%s] program break: %10p\n", prefix, sbrk(0));
-  block_t *ptr = head;
-  // printf("[%s] free list: \n", prefix);
-  // int c = 0;
-  // while (ptr) {
-  //   printf("(%d) <%10p> (length: %#lx)\n", c, ptr, ptr->length);
-  //   ptr = ptr->next;
-  //   c++;
-  // }
-  printf("[%s] data segment size: %lu\n", prefix, get_data_segment_size());
-  printf("[%s] data segment free space: %lu\n", prefix,
-         get_data_segment_free_space_size());
+  printf("%s\n", prefix);
 #endif
 }
 
