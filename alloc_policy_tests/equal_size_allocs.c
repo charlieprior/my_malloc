@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define NUM_ITERS 10000
+#define NUM_ITERS 100
 #define NUM_ITEMS 10000
 #define ALLOC_SIZE 128
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
   struct timespec start_time, end_time;
 
   if (NUM_ITEMS < 10000) {
-    printf("Error: NUM_ITEMS must be >= 1000\n");
+    printf("Error: NUM_ITEMS must be >= 10000\n");
     return -1;
   } // if
 

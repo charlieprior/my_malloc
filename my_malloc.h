@@ -11,6 +11,7 @@ typedef struct block {
 
 // First Fit malloc/free
 void *ff_malloc(size_t size);
+void alloc_from_free(block_t *block, size_t size);
 void ff_free(void *ptr);
 
 // Best Fit malloc/free

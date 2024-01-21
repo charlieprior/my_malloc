@@ -4,16 +4,16 @@
 
 #include "my_malloc.h"
 
-#define DEBUG
+// #define DEBUG
 
+// Naming conventions:
 // LENGTH refers to the length of the block, including the header
 // SIZE refers to the size of the block, not including the header
 // length = size + sizeof(block_t)
-
 // block is a block_t * pointing to metadata, ptr is a void * pointing to data
 
 static block_t *head = NULL;
-static void *start = NULL;
+static void *start = NULL; // For storing the first program break
 
 void print_debug(char *prefix) {
 #ifdef DEBUG
@@ -32,9 +32,9 @@ void print_debug(char *prefix) {
 #endif
 }
 
+// Merges (free) block with next block and previous block if possible
 void merge(block_t *block) {
   print_debug("before merge");
-  // Merge block with next block and previous block if possible
 
   if (block->next &&
       block->next == (block_t *)((char *)block + block->length)) {
@@ -44,7 +44,6 @@ void merge(block_t *block) {
     if (block->next) {
       block->next->prev = block;
     }
-    // printf("Merged with next block\n");
   }
 
   if (block->prev &&
@@ -55,22 +54,17 @@ void merge(block_t *block) {
     if (block->next) {
       block->next->prev = block->prev;
     }
-    // printf("Merged with previous block\n");
   }
   print_debug("after merge");
 }
 
-void split(block_t *block, size_t size) {
-  // printf("splitting block %p with new length %#lx\n", block,
-  //        size + sizeof(block_t));
-  print_debug("before split");
+// Allocates a block with size size from the free list, splitting if possible
+void alloc_from_free(block_t *block, size_t size) {
+  print_debug("before alloc from free");
 
   // Check if we can split the block
-  // (need space for header of new block)
+  // (NB: need space for header of new block)
   if (block->length <= size + sizeof(block_t) + sizeof(block_t)) {
-    // printf("Cannot split block\n");
-
-    // Update pointers
     if (block->prev) {
       block->prev->next = block->next;
     }
@@ -80,15 +74,15 @@ void split(block_t *block, size_t size) {
     if (block == head) {
       head = block->next;
     }
-    return;
+    return; // Didn't perform a split
   }
 
   block_t *new_block = (block_t *)((char *)block + size + sizeof(block_t));
   new_block->length = block->length - size - sizeof(block_t);
 
-  // Update the linked list pointers
   new_block->prev = block->prev;
   new_block->next = block->next;
+
   if (block->prev) {
     block->prev->next = new_block;
   }
@@ -101,74 +95,76 @@ void split(block_t *block, size_t size) {
 
   block->length = size + sizeof(block_t);
 
-  // printf(
-  //     "Splitting block %p into blocks %p (length %#lx) and %p (length
-  //     %#lx)\n", block, block, block->length, new_block, new_block->length);
-
-  print_debug("after split");
+  print_debug("after alloc from free");
 }
 
-void *ff_malloc(size_t size) {
-  print_debug("before malloc");
-  block_t *block = head;
+// Extends the program break to allocate a new block
+void *alloc_new(size_t size) {
+  print_debug("before new alloc");
 
-  while (block) {
-    if (block->length >= size + sizeof(block_t)) {
-      // We've found the first block that can fit our data
-
-      // If the block is not exactly the right size, we need to split it
-      if (block->length > size + sizeof(block_t)) {
-        split(block, size);
-      } else {
-        // Update the linked list pointers
-        if (block->prev) {
-          block->prev->next = block->next;
-        }
-        if (block->next) {
-          block->next->prev = block->prev;
-        }
-        if (block == head) {
-          head = block->next;
-        }
-      }
-      // printf("Allocating block %p with length %#lx bytes\n", block,
-      //        block->length);
-
-      print_debug("after malloc");
-      return (void *)((char *)block + sizeof(block_t));
-    }
-
-    // Try the next block
-    block = block->next;
-  }
-
-  // If we get here, we didn't find a block that could fit our data
-  // First record the program break
   if (!start) {
-    start = sbrk(0);
+    start = sbrk(0); // Record the program break if we haven't already
   }
 
-  block = (block_t *)sbrk(size + sizeof(block_t));
+  block_t *block = (block_t *)sbrk(size + sizeof(block_t));
   if (block == (void *)-1) {
-    // printf("sbrk failed\n");
-    return NULL;
+    return NULL; // sbrk failed
   }
+
   block->length = size + sizeof(block_t);
   block->prev = NULL;
   block->next = NULL;
 
-  // printf("Allocating block %p with length %#lx bytes\n", block,
-  // block->length);
-  print_debug("after malloc");
+  print_debug("after new alloc");
   return (void *)((char *)block + sizeof(block_t));
 }
 
-void ff_free(void *ptr) {
+// Best-fit malloc algorithm
+void *bf_malloc(size_t size) {
+  block_t *block = head;
+  block_t *best = NULL;
+  ssize_t best_length = -1;
+
+  while (block) {
+    if (block->length >= size + sizeof(block_t)) {
+      if (best_length == -1 || block->length < best_length) {
+        best = block;
+        best_length = block->length;
+      }
+    }
+
+    block = block->next;
+  }
+
+  if (best) {
+    alloc_from_free(best, size);
+    return (void *)((char *)best + sizeof(block_t));
+  }
+
+  return alloc_new(size);
+}
+
+// First-fit malloc algorithm
+void *ff_malloc(size_t size) {
+  block_t *block = head;
+
+  while (block) {
+    if (block->length >= size + sizeof(block_t)) {
+      alloc_from_free(block, size);
+      return (void *)((char *)block + sizeof(block_t));
+    }
+
+    block = block->next;
+  }
+
+  return alloc_new(size);
+}
+
+// Free a pointer to data (same for ff and bf)
+void _free(void *ptr) {
   print_debug("before free");
   block_t *block = (block_t *)((char *)ptr - sizeof(block_t));
-  // printf("Freeing block %p with length %#lx bytes\n", block, block->length);
 
-  // Add the block to the linked list
   if (!head) {
     head = block;
     block->prev = NULL;
@@ -180,7 +176,6 @@ void ff_free(void *ptr) {
     while (curr) {
       if (curr > block) {
         print_debug("free: before insertion");
-        // We've found the right place to insert the block
         block->prev = curr->prev;
         block->next = curr;
         if (curr->prev) {
@@ -189,12 +184,10 @@ void ff_free(void *ptr) {
         curr->prev = block;
 
         if (curr == head) {
-          // printf("head changed\n");
           head = block;
         }
         print_debug("free: after insertion");
 
-        // Merge the block if possible
         merge(block);
         return;
       }
@@ -202,18 +195,20 @@ void ff_free(void *ptr) {
       curr = curr->next;
     }
     print_debug("free: before insertion at end");
-    // We've reached the end of the list, so insert the block at the end
     last->next = block;
     block->prev = last;
     block->next = NULL;
     print_debug("free: after insertion at end");
 
-    // Merge the block if possible
     merge(block);
   }
 
   print_debug("after free");
 }
+
+void ff_free(void *ptr) { _free(ptr); }
+
+void bf_free(void *ptr) { _free(ptr); }
 
 unsigned long get_data_segment_size() {
   if (!start) {

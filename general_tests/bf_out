@@ -1,0 +1,442 @@
+[before malloc] program break:  0x4030000
+[before malloc] free list: 
+[before malloc] data segment size: 0
+[before malloc] data segment free space: 0
+[after malloc] program break:  0x4030028
+[after malloc] free list: 
+[after malloc] data segment size: 40
+[after malloc] data segment free space: 0
+[before malloc] program break:  0x4030028
+[before malloc] free list: 
+[before malloc] data segment size: 40
+[before malloc] data segment free space: 0
+[after malloc] program break:  0x4030080
+[after malloc] free list: 
+[after malloc] data segment size: 128
+[after malloc] data segment free space: 0
+[before malloc] program break:  0x4030080
+[before malloc] free list: 
+[before malloc] data segment size: 128
+[before malloc] data segment free space: 0
+[after malloc] program break:  0x40300b8
+[after malloc] free list: 
+[after malloc] data segment size: 184
+[after malloc] data segment free space: 0
+[before malloc] program break:  0x40300b8
+[before malloc] free list: 
+[before malloc] data segment size: 184
+[before malloc] data segment free space: 0
+[after malloc] program break:  0x4030150
+[after malloc] free list: 
+[after malloc] data segment size: 336
+[after malloc] data segment free space: 0
+[before free] program break:  0x4030150
+[before free] free list: 
+[before free] data segment size: 336
+[before free] data segment free space: 0
+[after free] program break:  0x4030150
+[after free] free list: 
+(0) < 0x4030000> (length: 0x28)
+[after free] data segment size: 336
+[after free] data segment free space: 40
+[before free] program break:  0x4030150
+[before free] free list: 
+(0) < 0x4030000> (length: 0x28)
+[before free] data segment size: 336
+[before free] data segment free space: 40
+[free: before insertion at end] program break:  0x4030150
+[free: before insertion at end] free list: 
+(0) < 0x4030000> (length: 0x28)
+[free: before insertion at end] data segment size: 336
+[free: before insertion at end] data segment free space: 40
+[free: after insertion at end] program break:  0x4030150
+[free: after insertion at end] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+[free: after insertion at end] data segment size: 336
+[free: after insertion at end] data segment free space: 96
+[before merge] program break:  0x4030150
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+[before merge] data segment size: 336
+[before merge] data segment free space: 96
+[after merge] program break:  0x4030150
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+[after merge] data segment size: 336
+[after merge] data segment free space: 96
+[after free] program break:  0x4030150
+[after free] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+[after free] data segment size: 336
+[after free] data segment free space: 96
+[before malloc] program break:  0x4030150
+[before malloc] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+[before malloc] data segment size: 336
+[before malloc] data segment free space: 96
+[before split] program break:  0x4030150
+[before split] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030080> (length: 0x38)
+[before split] data segment size: 336
+[before split] data segment free space: 96
+[after malloc] program break:  0x4030150
+[after malloc] free list: 
+(0) < 0x4030000> (length: 0x28)
+[after malloc] data segment size: 336
+[after malloc] data segment free space: 40
+[before malloc] program break:  0x4030150
+[before malloc] free list: 
+(0) < 0x4030000> (length: 0x28)
+[before malloc] data segment size: 336
+[before malloc] data segment free space: 40
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x4030000> (length: 0x28)
+[after malloc] data segment size: 1384
+[after malloc] data segment free space: 40
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0x28)
+[before free] data segment size: 1384
+[before free] data segment free space: 40
+[free: before insertion at end] program break:  0x4030568
+[free: before insertion at end] free list: 
+(0) < 0x4030000> (length: 0x28)
+[free: before insertion at end] data segment size: 1384
+[free: before insertion at end] data segment free space: 40
+[free: after insertion at end] program break:  0x4030568
+[free: after insertion at end] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+[free: after insertion at end] data segment size: 1384
+[free: after insertion at end] data segment free space: 1088
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+[before merge] data segment size: 1384
+[before merge] data segment free space: 1088
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+[after merge] data segment size: 1384
+[after merge] data segment free space: 1088
+[after free] program break:  0x4030568
+[after free] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+[after free] data segment size: 1384
+[after free] data segment free space: 1088
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+[before free] data segment size: 1384
+[before free] data segment free space: 1088
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030150> (length: 0x418)
+[free: before insertion] data segment size: 1384
+[free: before insertion] data segment free space: 1088
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030028> (length: 0x58)
+(2) < 0x4030150> (length: 0x418)
+[free: after insertion] data segment size: 1384
+[free: after insertion] data segment free space: 1176
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x28)
+(1) < 0x4030028> (length: 0x58)
+(2) < 0x4030150> (length: 0x418)
+[before merge] data segment size: 1384
+[before merge] data segment free space: 1176
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030150> (length: 0x418)
+[after merge] data segment size: 1384
+[after merge] data segment free space: 1176
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030150> (length: 0x418)
+[before free] data segment size: 1384
+[before free] data segment free space: 1176
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030150> (length: 0x418)
+[free: before insertion] data segment size: 1384
+[free: before insertion] data segment free space: 1176
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x98)
+(2) < 0x4030150> (length: 0x418)
+[free: after insertion] data segment size: 1384
+[free: after insertion] data segment free space: 1328
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x98)
+(2) < 0x4030150> (length: 0x418)
+[before merge] data segment size: 1384
+[before merge] data segment free space: 1328
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x4b0)
+[after merge] data segment size: 1384
+[after merge] data segment free space: 1328
+[before malloc] program break:  0x4030568
+[before malloc] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x4b0)
+[before malloc] data segment size: 1384
+[before malloc] data segment free space: 1328
+[before split] program break:  0x4030568
+[before split] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x40300b8> (length: 0x4b0)
+[before split] data segment size: 1384
+[before split] data segment free space: 1328
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x40300b8> (length: 0x4b0)
+[after malloc] data segment size: 1384
+[after malloc] data segment free space: 1200
+[before malloc] program break:  0x4030568
+[before malloc] free list: 
+(0) < 0x40300b8> (length: 0x4b0)
+[before malloc] data segment size: 1384
+[before malloc] data segment free space: 1200
+[before split] program break:  0x4030568
+[before split] free list: 
+(0) < 0x40300b8> (length: 0x4b0)
+[before split] data segment size: 1384
+[before split] data segment free space: 1200
+[after split] program break:  0x4030568
+[after split] free list: 
+(0) < 0x40300e0> (length: 0x488)
+[after split] data segment size: 1384
+[after split] data segment free space: 1160
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x40300e0> (length: 0x488)
+[after malloc] data segment size: 1384
+[after malloc] data segment free space: 1160
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x40300e0> (length: 0x488)
+[before free] data segment size: 1384
+[before free] data segment free space: 1160
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x40300e0> (length: 0x488)
+[free: before insertion] data segment size: 1384
+[free: before insertion] data segment free space: 1160
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+[free: after insertion] data segment size: 1384
+[free: after insertion] data segment free space: 1216
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+[before merge] data segment size: 1384
+[before merge] data segment free space: 1216
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+[after merge] data segment size: 1384
+[after merge] data segment free space: 1216
+[before malloc] program break:  0x4030568
+[before malloc] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+[before malloc] data segment size: 1384
+[before malloc] data segment free space: 1216
+[before split] program break:  0x4030568
+[before split] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40300e0> (length: 0x488)
+[before split] data segment size: 1384
+[before split] data segment free space: 1216
+[after split] program break:  0x4030568
+[after split] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+[after split] data segment size: 1384
+[after split] data segment free space: 1152
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+[after malloc] data segment size: 1384
+[after malloc] data segment free space: 1152
+[before malloc] program break:  0x4030568
+[before malloc] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+[before malloc] data segment size: 1384
+[before malloc] data segment free space: 1152
+[before split] program break:  0x4030568
+[before split] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x4030120> (length: 0x448)
+[before split] data segment size: 1384
+[before split] data segment free space: 1152
+[after split] program break:  0x4030568
+[after split] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40301b8> (length: 0x3b0)
+[after split] data segment size: 1384
+[after split] data segment free space: 1000
+[after malloc] program break:  0x4030568
+[after malloc] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40301b8> (length: 0x3b0)
+[after malloc] data segment size: 1384
+[after malloc] data segment free space: 1000
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40301b8> (length: 0x3b0)
+[before free] data segment size: 1384
+[before free] data segment free space: 1000
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030080> (length: 0x38)
+(1) < 0x40301b8> (length: 0x3b0)
+[free: before insertion] data segment size: 1384
+[free: before insertion] data segment free space: 1000
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030080> (length: 0x38)
+(2) < 0x40301b8> (length: 0x3b0)
+[free: after insertion] data segment size: 1384
+[free: after insertion] data segment free space: 1128
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x80)
+(1) < 0x4030080> (length: 0x38)
+(2) < 0x40301b8> (length: 0x3b0)
+[before merge] data segment size: 1384
+[before merge] data segment free space: 1128
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40301b8> (length: 0x3b0)
+[after merge] data segment size: 1384
+[after merge] data segment free space: 1128
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40301b8> (length: 0x3b0)
+[before free] data segment size: 1384
+[before free] data segment free space: 1128
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40301b8> (length: 0x3b0)
+[free: before insertion] data segment size: 1384
+[free: before insertion] data segment free space: 1128
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40300b8> (length: 0x28)
+(2) < 0x40301b8> (length: 0x3b0)
+[free: after insertion] data segment size: 1384
+[free: after insertion] data segment free space: 1168
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0xb8)
+(1) < 0x40300b8> (length: 0x28)
+(2) < 0x40301b8> (length: 0x3b0)
+[before merge] data segment size: 1384
+[before merge] data segment free space: 1168
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40301b8> (length: 0x3b0)
+[after merge] data segment size: 1384
+[after merge] data segment free space: 1168
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40301b8> (length: 0x3b0)
+[before free] data segment size: 1384
+[before free] data segment free space: 1168
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40301b8> (length: 0x3b0)
+[free: before insertion] data segment size: 1384
+[free: before insertion] data segment free space: 1168
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40300e0> (length: 0x40)
+(2) < 0x40301b8> (length: 0x3b0)
+[free: after insertion] data segment size: 1384
+[free: after insertion] data segment free space: 1232
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0xe0)
+(1) < 0x40300e0> (length: 0x40)
+(2) < 0x40301b8> (length: 0x3b0)
+[before merge] data segment size: 1384
+[before merge] data segment free space: 1232
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x40301b8> (length: 0x3b0)
+[after merge] data segment size: 1384
+[after merge] data segment free space: 1232
+[before free] program break:  0x4030568
+[before free] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x40301b8> (length: 0x3b0)
+[before free] data segment size: 1384
+[before free] data segment free space: 1232
+[free: before insertion] program break:  0x4030568
+[free: before insertion] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x40301b8> (length: 0x3b0)
+[free: before insertion] data segment size: 1384
+[free: before insertion] data segment free space: 1232
+[free: after insertion] program break:  0x4030568
+[free: after insertion] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x4030120> (length: 0x98)
+(2) < 0x40301b8> (length: 0x3b0)
+[free: after insertion] data segment size: 1384
+[free: after insertion] data segment free space: 1384
+[before merge] program break:  0x4030568
+[before merge] free list: 
+(0) < 0x4030000> (length: 0x120)
+(1) < 0x4030120> (length: 0x98)
+(2) < 0x40301b8> (length: 0x3b0)
+[before merge] data segment size: 1384
+[before merge] data segment free space: 1384
+[after merge] program break:  0x4030568
+[after merge] free list: 
+(0) < 0x4030000> (length: 0x568)
+[after merge] data segment size: 1384
+[after merge] data segment free space: 1384
+Calculated expected value of 68614
+Test passed
