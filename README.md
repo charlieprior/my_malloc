@@ -1,6 +1,8 @@
 # ECE650 Malloc Library Project 1
 Charlie Prior (cgp26)
 
+This repository was completed as a project for Duke ECE650 in which we had to implement our own versions of malloc and free using first-fit and best-fit algorithms.
+
 ## Implementation
 To implement malloc (for both algorithms), I used a block structure block_t that holds the length of the block including metadata, and pointers to the next and previous blocks if in the free list (NULL otherwise). I use a static pointer to block_t to hold the location of the head of the free list.
 
