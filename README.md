@@ -30,4 +30,5 @@ In my approach, I used a doubly-linked list to implement the free list. One way 
 
 ## References
 Kerrisk, M. (2010). *The Linux Programming Interface: A Linux and UNIX system programming handbook.* No Starch Press.
+
 Carvalho, A. (2017, June 14). *Implementing malloc and free.* Medium. https://medium.com/@andrestc/implementing-malloc-and-free-ba7e7704a473
