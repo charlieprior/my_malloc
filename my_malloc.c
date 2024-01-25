@@ -4,7 +4,7 @@
 
 #include "my_malloc.h"
 
-// #define DEBUG
+#define DEBUG
 
 // Naming conventions:
 // LENGTH refers to the length of the block, including the header
@@ -15,19 +15,20 @@
 static block_t *head = NULL;
 static void *start = NULL; // For storing the first program break
 
-void print_debug(char *prefix) {
+void print_debug(char *stage) {
 #ifdef DEBUG
-  printf("[%s] program break: %10p\n", prefix, sbrk(0));
+  printf("[%s] program break: %10p\n", stage, sbrk(0));
+
+  printf("[%s] free list: \n", stage);
   block_t *block = head;
-  printf("[%s] free list: \n", prefix);
   int i = 0;
   while (block) {
     printf("(%d) <%10p> (length: %#lx)\n", i, block, block->length);
     block = block->next;
     i++;
   }
-  printf("[%s] data segment size: %lu\n", prefix, get_data_segment_size());
-  printf("[%s] data segment free space: %lu\n", prefix,
+  printf("[%s] data segment size: %lu\n", stage, get_data_segment_size());
+  printf("[%s] data segment free space: %lu\n", stage,
          get_data_segment_free_space_size());
 #endif
 }
@@ -62,6 +63,11 @@ void merge(block_t *block) {
 void alloc_from_free(block_t *block, size_t size) {
   print_debug("before alloc from free");
 
+#ifdef DEBUG
+  printf("Allocating %#lx bytes from block %10p\n", size + sizeof(block_t),
+         block);
+#endif
+
   // Check if we can split the block
   // (NB: need space for header of new block)
   if (block->length <= size + sizeof(block_t) + sizeof(block_t)) {
@@ -74,6 +80,8 @@ void alloc_from_free(block_t *block, size_t size) {
     if (block == head) {
       head = block->next;
     }
+
+    print_debug("after alloc from free");
     return; // Didn't perform a split
   }
 
