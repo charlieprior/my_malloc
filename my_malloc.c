@@ -4,7 +4,7 @@
 
 #include "my_malloc.h"
 
-#define DEBUG
+// #define DEBUG
 
 // Naming conventions:
 // LENGTH refers to the length of the block, including the header
@@ -138,6 +138,11 @@ void *bf_malloc(size_t size) {
       if (best_length == -1 || block->length < best_length) {
         best = block;
         best_length = block->length;
+
+        if (block->length == size + sizeof(block_t)) {
+          // We've found the optimum fit
+          break;
+        }
       }
     }
 
